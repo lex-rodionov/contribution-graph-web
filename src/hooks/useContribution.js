@@ -5,7 +5,6 @@ import {getContributionList} from '../utils/api';
 
 const DAY_COUNT = 357;
 
-
 export default function useContribution() {
   const [loading, setLoading] = useState(false);
   const [days, setDays] = useState([]);

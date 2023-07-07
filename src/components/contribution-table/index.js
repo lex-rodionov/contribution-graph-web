@@ -60,6 +60,18 @@ export default function ContributionTable({ list }) {
               />
           ))}
         </div>
+
+        <div className='contribution-table-legeng'>
+          <span className='contribution-table-text contribution-table-small-text'>Меньше</span>
+          <div className='contribution-table-legeng-items'>
+            <ContributionDay contributionCount={0} isLegend tooltipText={'No contribution'} />
+            <ContributionDay contributionCount={9} isLegend tooltipText={'1-9 contributions'} />
+            <ContributionDay contributionCount={19} isLegend tooltipText={'10-19 contributions'} />
+            <ContributionDay contributionCount={29} isLegend tooltipText={'20-29 contributions'} />
+            <ContributionDay contributionCount={39} isLegend tooltipText={'30+ contributions'} />
+          </div>
+          <span className='contribution-table-text contribution-table-small-text'>Больше</span>
+        </div>
       </div>
     </div>
   );

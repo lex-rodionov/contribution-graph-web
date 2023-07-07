@@ -1,4 +1,7 @@
 import cn from 'classnames';
+import { Tooltip } from 'react-tooltip';
+import { format } from 'date-fns';
+import { ru } from 'date-fns/locale';
 
 import './styles.css';
 
@@ -10,7 +13,7 @@ const LVL4_COUNT = { min: 30 };
 export default function ContributionDay({
   contributionCount,
   date,
-  showDate,
+  isLegend,
   tooltipText,
   isSelected,
   onSelect,
@@ -24,10 +27,32 @@ export default function ContributionDay({
   });
 
   const handleSelect = () => {
+    if (isLegend) {
+      return;
+    }
+
     onSelect(date);
   }
 
   return (
-    <div className={className} onClick={handleSelect} />
+    <>
+      <div
+        data-tooltip-id={date}
+        className={className}
+        onClick={handleSelect}
+      />
+
+      <Tooltip
+        id={date}
+        isOpen={isSelected}
+        opacity={1}
+      >
+        <div>
+          <h3 className='tooltip-title'>{tooltipText ?? contributionCount + ' contributions'}</h3>
+          {!isLegend && (<p className='tooltip-description'>{format(new Date(date), 'PPPP', { locale: ru })}</p>)}
+        </div>
+      </Tooltip>
+    </>
+
   );
 }

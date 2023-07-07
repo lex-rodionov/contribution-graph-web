@@ -1,0 +1,40 @@
+.contribution-table {
+  display: flex;
+  padding: 55px 100px;
+  overflow-x: auto;
+}
+
+.contribution-table-container {
+  width: 863px;
+}
+
+.contribution-table-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 2px;
+  grid-template-rows: repeat(7, 1fr);
+  justify-content: left;
+}
+
+.contribution-table-side {
+  padding-top: 20px;
+  padding-right: 5px;
+}
+
+.contribution-table-side > .contribution-table-text {
+  padding-bottom: 18px;
+}
+
+.contribution-table-header {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 5px;
+}
+
+.contribution-table-text {
+  color: #959494;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+  font-family: Inter;
+}

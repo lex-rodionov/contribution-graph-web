@@ -1,4 +1,5 @@
 import cn from 'classnames';
+
 import './styles.css';
 
 const LVL1_COUNT = { min: 1, max: 9 };
